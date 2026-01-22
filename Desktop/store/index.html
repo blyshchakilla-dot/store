@@ -29,7 +29,7 @@
                     <div class="hero__box">
                         <div class="hero__left">
                             <h1 class="hero__title">Всесвіт гаджетів<br>для тебе.</h1>
-                            <a class="btn btn--primary" href="#">Переглянути каталог</a>
+                            <a class="btn btn--primary" href="#" id="toCatalog">Переглянути каталог</a>
                         </div>
                         <div class="hero__right" aria-label="зображення ноутбука">
                             <img class="hero__img" src="#" alt="Ноутбук" />
@@ -38,12 +38,12 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section class="section" id="products">
                 <div class="container">
                     <h2 class="section__title">Хіти продажів</h2>
 
                     <div class="products">
-                        <article class="product">
+                        <article class="product" data-name="Laptop" data-price="40 000 грн">
                             <div class="product__img">
                                 <img src="#" alt="Ноутбук" />
                             </div>
@@ -51,7 +51,7 @@
                             <p class="product__price">40 000 грн</p>
                         </article>
 
-                         <article class="product">
+                         <article class="product" data-name="Smart watch" data-price="5 000 грн">
                             <div class="product__img">
                                 <img src="#" alt="Smart watch" />
                             </div>
@@ -59,7 +59,7 @@
                             <p class="product__price">5 000 грн</p>
                         </article>
 
-                         <article class="product">
+                         <article class="product" data-name="Headphones" data-price="3 000 грн">
                             <div class="product__img">
                                 <img src="#" alt="Headphones" />
                             </div>
@@ -67,7 +67,7 @@
                             <p class="product__price">3 000 грн</p>
                         </article>
 
-                         <article class="product">
+                         <article class="product" data-name="Tablet" data-price="20 000 грн">
                             <div class="product__img">
                                 <img src="#" alt="Tablet" />
                             </div>
@@ -87,9 +87,10 @@
           </div>
 
           <div class="cta__actions">
-            <a class="btn btn--primary btn--small" href="#">Ваш номер телефону</a>
-            <a class="btn btn--dark btn--small" href="#">Зателефонуйте</a>
-          </div>
+  <input class="input" id="phone" type="tel" placeholder="Ваш номер телефону" />
+  <button class="btn btn--dark btn--small" id="callBtn">Зателефонуйте</button>
+</div>
+<p class="cta__msg" id="ctaMsg" aria-live="polite"></p>
         </div>
       </div>
     </section>
@@ -119,5 +120,17 @@
       </div>
             </div>
         </footer>
+        <div class="modal" id="modal" aria-hidden="true">
+  <div class="modal__overlay" data-close="true"></div>
+
+  <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal__close" aria-label="Закрити" data-close="true">✕</button>
+    <h3 class="modal__title" id="modalTitle"></h3>
+    <p class="modal__price" id="modalPrice"></p>
+    <button class="btn btn--primary btn--small" id="buyBtn">Додати в кошик</button>
+    <p class="modal__msg" id="modalMsg" aria-live="polite"></p>
+  </div>
+</div>
+
     </body>
 </html>
